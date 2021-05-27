@@ -68,7 +68,7 @@ function inputCheck(){
 	</select></td>
 </tr>
 <tr>
-	<td></td> 
+	<td></td>
 	<td style="text-align:right;"><input type="button" value="취소" onclick="history.back()"> <input type="submit" value="업로드"></td>
 </tr>
 </table>
