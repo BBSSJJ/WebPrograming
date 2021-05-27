@@ -11,7 +11,7 @@ public class VideoInfo {
 		return title;
 	}
 	public void setTitle(String title) {
-		this.title = title;
+		this.title = title; 
 	}
 	public String getVideo_src() {
 		return video_src;
