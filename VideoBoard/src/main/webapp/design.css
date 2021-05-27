@@ -1,0 +1,126 @@
+	#homepage_name{
+		font-size:40px;
+		padding-left:30px;
+	}
+	#homepage_name a{
+		text-decoration:none;
+	}
+	#homepage_name a:visited{
+		color:black;
+	}
+	
+	#head{
+		font-size:25px;
+		padding-top:0px;
+		padding-left:10px;
+		padding-bottom:20px;
+		border-bottom:1px solid #D8D8D8;       
+	}
+	#nav{
+		position:absolute;
+		top:120px;
+		left:0px;
+		width:110px;
+		padding-right:40px;
+		padding-left:30px;
+	}
+	#nav a:visited{
+		color:black;
+	}
+	#content{
+		position:absolute;
+		top:120px;
+		left:200px;
+		border-left:1px solid #D8D8D8;
+		padding-left:55px;
+	}
+	#title {
+		width:600px;
+	}
+	#video_src, #thumbnail_src {
+		width:600px;
+	}
+	textarea {
+		width:600px;
+	}
+	#nav li{
+		padding-top:5px;
+		padding-bottom:5px;
+	}
+	#category{
+		list-style:none;
+		padding-left:0px;
+		font-size:13px;
+	}
+	#upload_form td{
+		padding: 15px;
+	}
+
+	
+	
+
+	#show_video{
+		border:1px solid black;
+	}
+	#video_info1{
+		font-size:14px;
+		margin-bottom:5px;
+		padding-bottom:5px;
+		
+	}
+	#video_info2{
+		font-size:14px;
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:5px;
+	}
+	#video_info3{
+		font-size:18px;
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-top:5px;
+	}
+	.video_info{
+		table-layout:fixed;
+		word-break:break-all;
+		width:1000px;
+	}
+	
+	
+	
+	#mainpage_head{
+		padding-top:20px;
+		width:1000px;
+		padding-bottom:20px;
+		border-bottom:1px solid #D8D8D8;
+	}
+	#search{
+		padding:0px;
+		width:300px;
+	}
+	#posted_video{
+		word-wrap:break-all;
+		width:1000px;
+		padding-bottom:10px;
+		padding-top:10px;
+		border-bottom: 1px solid #D8D8D8;
+	}
+	
+	#posted_video_thumbnail{
+		width:250px;
+		height:180px;
+	}
+	#posted_video_title{
+		margin:0px;
+		font-size:18px;
+		font-weight:bold;
+	}
+	#posted_video td{
+		padding-left:20px;
+	}
+	#thumbnail{
+		width:250px;
+		height:180px;
+	}
+	
+	
