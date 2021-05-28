@@ -1,0 +1,15 @@
+
+<Context useNaming="true">
+	<Resource description="DB Connection"
+		auth="Container"
+		driverClassName="org.mariadb.jdbc.Driver"
+		name="jdbc/mydbTest"
+		type="javax.sql.DataSource"
+		url="jdbc:mariadb://Localhost:3306/mydb?useSSL=false"
+		username="admin"
+		password="1234"
+		maxIdle="5"
+		maxTotal="5"
+		maxWaitMillis="1000"
+	/>
+</Context>
