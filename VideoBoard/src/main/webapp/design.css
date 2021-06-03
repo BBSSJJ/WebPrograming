@@ -5,6 +5,9 @@
 	#homepage_name a{
 		text-decoration:none;
 	}
+	#homepage_name a:link{
+		color:black;
+	}
 	#homepage_name a:visited{
 		color:black;
 	}
@@ -61,24 +64,31 @@
 
 	#show_video{
 		border:1px solid black;
+		text-align:center;
+		background-color:black;
 	}
 	#video_info1{
 		font-size:14px;
 		margin-bottom:5px;
-		padding-bottom:5px;
-		
+		padding-bottom:15px;
+		padding-top:15px;
 	}
 	#video_info2{
+		text-align:right;
 		font-size:14px;
-		margin-top:5px;
 		margin-bottom:5px;
-		padding-bottom:5px;
+		padding-bottom:15px;
+		padding-top:15px;
 	}
 	#video_info3{
+		border:1px solid #D8D8D8;
 		font-size:18px;
 		margin-top:5px;
 		margin-bottom:5px;
-		padding-top:5px;
+		padding:10px;
+	}
+	#video_info4{
+		text-align:right;
 	}
 	.video_info{
 		table-layout:fixed;
@@ -109,14 +119,19 @@
 	#posted_video_thumbnail{
 		width:250px;
 		height:180px;
+		object-fit:cover;
 	}
 	#posted_video_title{
 		margin:0px;
 		font-size:18px;
 		font-weight:bold;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
 	}
 	#posted_video td{
 		padding-left:20px;
+		padding-right:20px;
 	}
 	#thumbnail{
 		width:250px;
