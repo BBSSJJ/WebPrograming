@@ -1,9 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="design.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>영상 업로드</title>
 </head>
 <body>
@@ -13,14 +13,14 @@
 	<ul>
 		<li><a href="video_list.jsp">메인메뉴</a>
 		<li>카테고리
-		<ul id="category">
-			<li><a href="video_list.jsp">#게임</a>
-			<li><a href="video_list.jsp">#유머</a>
-			<li><a href="video_list.jsp">#스포츠</a>
-			<li><a href="video_list.jsp">#연예인</a>
-			<li><a href="video_list.jsp">#동물</a>
-			<li><a href="video_list.jsp">#음악</a>
-			<li><a href="video_list.jsp">#기타</a>
+		<ul id="menu_category">
+			<li><a href="video_list.jsp?category=게임">#게임</a>
+			<li><a href="video_list.jsp?category=유머">#유머</a>
+			<li><a href="video_list.jsp?category=스포츠">#스포츠</a>
+			<li><a href="video_list.jsp?category=연예인">#연예인</a>
+			<li><a href="video_list.jsp?category=동물">#동물</a>
+			<li><a href="video_list.jsp?category=음악">#음악</a>
+			<li><a href="video_list.jsp?category=기타">#기타</a>
 		</ul>
 	</ul>
 </div>
@@ -30,7 +30,7 @@
 <table id="upload_form">
 <tr>
 	<td><label for="title">제목</label></td>
-	<td><input type="text" id="title" name="title" required></td>
+	<td><input type="text" id="title" name="title" maxlength='50' required></td>
 </tr>
 <tr>
 	<td><label for="video_src">영상 소스</label></td>
@@ -42,7 +42,7 @@
 </tr>
 <tr>
 	<td style="vertical-align:top"><label for="explanation">영상 설명</label></td>
-	<td><textarea rows="7" cols="72" id="explanation" name="explanation"></textarea></td>
+	<td><textarea rows="7" cols="72" id="explanation" name="explanation" style="resize:none;"></textarea></td>
 </tr>
 <tr>
 	<td><label for="category">카테고리</label></td>

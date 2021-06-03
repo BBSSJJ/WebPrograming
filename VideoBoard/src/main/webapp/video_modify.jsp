@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" import="java.sql.*" %>
 <%
 request.setCharacterEncoding("utf-8");
+//편집 버튼 클릭했을 때 보낸 idx값 저장
 int idx = Integer.parseInt(request.getParameter("idx"));
 
 Class.forName("org.mariadb.jdbc.Driver");
@@ -12,6 +13,7 @@ Connection con = null;
 PreparedStatement pstmt = null;
 ResultSet rs = null;
 
+//idx값 이용하여 출력할 data들 가져온다.
 con = DriverManager.getConnection(URL, USER, PASSWORD);
 String sql = "SELECT title, explanation, category FROM video_info WHERE idx=?";
 pstmt = con.prepareStatement(sql);
@@ -25,8 +27,9 @@ rs.next();
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="design.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <script>
+//수정 버튼 클릭 시 확인창
 function modify_confirm(idx){
 	if(confirm("정말 수정하시겠습니까?")){
 		location.href = "video_modify_do.jsp?idx=" + idx;
@@ -34,13 +37,16 @@ function modify_confirm(idx){
 		return;
 	}
 }
+//기존의 category값을 그대로 출력해주기 위해서
+//기존의 category값과 일치하는 option을 찾아 selected로 바꿔준다.
 window.onload = function(){
 	var category = "<%=rs.getString("category")%>";
 	console.log(category);
 	var select = document.getElementById("category");
-	if(category === "기타") select.options[0].value.selected = true;
+
+	if(category === "기타") select.options[0].selected = true;
 	else if(category === "게임") select.options[1].selected = true;
-	else if(category === "유머") select.options[2].value.selected = true;
+	else if(category === "유머") select.options[2].selected = true;
 	else if(category === "스포츠") select.options[3].selected = true;
 	else if(category === "연예인") select.options[4].selected = true;
 	else if(category === "동물") select.options[5].selected = true;
@@ -56,14 +62,14 @@ window.onload = function(){
 	<ul>
 		<li><a href="video_list.jsp">메인메뉴</a>
 		<li>카테고리
-		<ul id="category">
-			<li><a href="video_list.jsp">#게임</a>
-			<li><a href="video_list.jsp">#유머</a>
-			<li><a href="video_list.jsp">#스포츠</a>
-			<li><a href="video_list.jsp">#연예인</a>
-			<li><a href="video_list.jsp">#동물</a>
-			<li><a href="video_list.jsp">#음악</a>
-			<li><a href="video_list.jsp">#기타</a>
+		<ul id="menu_category">
+			<li><a href="video_list.jsp?category=게임">#게임</a>
+			<li><a href="video_list.jsp?category=유머">#유머</a>
+			<li><a href="video_list.jsp?category=스포츠">#스포츠</a>
+			<li><a href="video_list.jsp?category=연예인">#연예인</a>
+			<li><a href="video_list.jsp?category=동물">#동물</a>
+			<li><a href="video_list.jsp?category=음악">#음악</a>
+			<li><a href="video_list.jsp?category=기타">#기타</a>
 		</ul>
 	</ul>
 </div>
@@ -73,7 +79,7 @@ window.onload = function(){
 <table id="upload_form">
 <tr>
 	<td><label for="title">제목</label></td>
-	<td><input type="text" id="title" name="title" value="<%=rs.getString("title") %>" required></td>
+	<td><input type="text" id="title" name="title" value="<%=rs.getString("title") %>" maxlength='50' required></td>
 </tr>
 <tr>
 	<td><label for="video_src">영상 소스</label></td>
@@ -101,7 +107,8 @@ window.onload = function(){
 </tr>
 <tr>
 	<td></td>
-	<td style="text-align:right;"><input type="button" value="취소" onclick="history.back()"> <input type="submit" value="수 정" onClick="modify_confirm(<%=idx %>)"></td>
+	<td style="text-align:right;"><input type="button" value="취소" onclick="history.back()">
+	<input type="submit" value="수정" onClick="modify_confirm(<%=idx %>)"></td>
 </tr>
 </table>
 </form>
