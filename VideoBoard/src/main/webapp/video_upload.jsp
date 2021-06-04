@@ -30,7 +30,7 @@
 <table id="upload_form">
 <tr>
 	<td><label for="title">제목</label></td>
-	<td><input type="text" id="title" name="title" maxlength='50' required></td>
+	<td><input type="text" id="title" name="title" maxlength='30' required></td>
 </tr>
 <tr>
 	<td><label for="video_src">영상 소스</label></td>
